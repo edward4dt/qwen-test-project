@@ -1,15 +1,15 @@
 # Tasks: 建立核心資料模型
 
 ## 1. 型別定義
-- [ ] T001 定義 `Card` 介面（id, deckId, front, backReading, backMeaning, audioClip, srs）
-- [ ] T002 定義 `Deck` 介面（id, name, source, sourceUrl, createdAt）
-- [ ] T003 定義 `SRSCard` 介面（dueDate, stability, difficulty, reps, lastReview）
-- [ ] T004 定義 `ReviewLog` 介面（cardId, timestamp, passed, recognizedText, similarity, feedback）
+- [x] T001 定義 `Card` 介面（id, deckId, front, backReading, backMeaning, audioClip, srs）
+- [x] T002 定義 `Deck` 介面（id, name, source, sourceUrl, createdAt）
+- [x] T003 定義 `SRSCard` 介面（dueDate, stability, difficulty, reps, lastReview）
+- [x] T004 定義 `ReviewLog` 介面（cardId, timestamp, passed, recognizedText, similarity, feedback）
 
 ## 2. 本機資料庫
-- [ ] T005 建立 Dexie `FlashcardDB` class，定義 decks/cards/reviewLogs 三張表
-- [ ] T006 撰寫基本 CRUD 輔助函式（新增/查詢牌組、新增/查詢卡片）
-- [ ] T007 撰寫最小單元測試，驗證 schema 可正確寫入讀出
+- [x] T005 建立 Dexie `FlashcardDB` class，定義 decks/cards/reviewLogs 三張表
+- [x] T006 撰寫基本 CRUD 輔助函式（新增/查詢牌組、新增/查詢卡片）
+- [x] T007 撰寫最小單元測試，驗證 schema 可正確寫入讀出
 
 ## 3. 文件同步
 - [ ] T008 確認 `openspec/project.md`、`CLAUDE.md`、`.clinerules` 三份文件的技術棧描述一致
