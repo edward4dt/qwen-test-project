@@ -1,73 +1,63 @@
 ```
-# Dependencies
-node_modules/
-
-# Environment
+# Environment files
 .env
 .env.local
 *.env.*
 
-# Logs and temp files
+# Logs and temporary files
 *.log
 *.tmp
+*.swp
 
-# Build artifacts
-dist/
-build/
-target/
+# Editors
+.vscode/
+.idea/
 
 # Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.so
-*.egg-info/
-.eggs/
+.Python
+venv/
+.venv/
+.env
+.env.local
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage/
+htmlcov/
 
-# Java
-*.class
-*.jar
-*.war
-*.ear
-*.nar
-target/
-.gradle/
+# Build artifacts
+dist/
 build/
+*.egg-info/
+.tox/
+.coverage*
 
-# C/C++
-*.o
-*.obj
-*.a
-*.lib
-*.so
-*.dll
-*.dylib
-*.exe
-
-# JavaScript/TypeScript
-*.js.map
-*.tsbuildinfo
-.nyc_output/
-coverage/
-.nyc_output
-coverage/
-
-# Editors
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
+# OS generated files
 .DS_Store
 Thumbs.db
 
-# Testing
-.jest/
-jest-coverage/
+# Miscellaneous
+*.swp
+*.swo
+*~
+.DS_Store*
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Icon?
+iTunes_Control/
+.TemporaryItems
+.Trash-*
+*.crdownload
+*~
 
-# Compression
+# Compression files
 *.zip
 *.gz
 *.tar
