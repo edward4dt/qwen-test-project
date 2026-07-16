@@ -24,3 +24,92 @@
 #### Scenario: 離線開啟 App
 - **WHEN** 使用者在無網路連線狀態下開啟 App
 - **THEN** 系統 SHALL 能正常列出已匯入的牌組與卡片，不因缺乏網路而顯示空白或錯誤
+
+## Implementation Details
+
+### Type Definitions (`/src/types/index.ts`)
+
+#### LanguageCode
+```typescript
+export type LanguageCode = 'ja' | 'ko' | 'en' | 'id';
+```
+
+#### SRSCard
+```typescript
+export interface SRSCard {
+  dueDate: Date;
+  stability: number;
+  difficulty: number;
+  reps: number;
+  lastReview: Date | null;
+}
+```
+
+#### ReviewLog
+```typescript
+export interface ReviewLog {
+  cardId: string;
+  timestamp: Date;
+  passed: boolean;
+  recognizedText: string;
+  similarity: number;
+  feedback: string;
+}
+```
+
+#### Card
+```typescript
+export interface Card {
+  id: string;
+  deckId: string;
+  front: string;           // 正面文字（例如：單詞）
+  backReading: string;     // 背面讀音
+  backMeaning: string;     // 背面意思
+  audioClip?: string;      // 音檔路徑或 URL（可選）
+  language: LanguageCode;  // 卡片語言
+  srs?: SRSCard;           // SRS 狀態（可選）
+}
+```
+
+#### Deck
+```typescript
+export interface Deck {
+  id: string;
+  name: string;
+  source: string;          // 來源（例如：YouTube 影片標題）
+  sourceUrl?: string;      // 來源 URL（可選）
+  createdAt: Date;
+  language: LanguageCode;  // 牌組主要語言
+}
+```
+
+### Database Schema (`/src/lib/db.ts`)
+
+#### Database Name: `FlashcardDB`
+
+#### Tables and Indexes
+```typescript
+{
+  decks: 'id, name, language',
+  cards: 'id, deckId, language',
+  reviewLogs: '++id, cardId, timestamp',
+}
+```
+
+#### CRUD Operations
+
+**Deck Operations:**
+- `createDeck(deck: Deck): Promise<void>`
+- `getDeck(id: string): Promise<Deck | undefined>`
+- `getAllDecks(): Promise<Deck[]>`
+- `getDecksByLanguage(language: string): Promise<Deck[]>`
+
+**Card Operations:**
+- `createCard(card: Card): Promise<void>`
+- `getCard(id: string): Promise<Card | undefined>`
+- `getCardsByDeck(deckId: string): Promise<Card[]>`
+- `getCardsByLanguage(language: string): Promise<Card[]>`
+
+**ReviewLog Operations:**
+- `createReviewLog(log: Omit<ReviewLog, 'id'>): Promise<number>`
+- `getReviewLogsByCard(cardId: string): Promise<ReviewLog[]>`
