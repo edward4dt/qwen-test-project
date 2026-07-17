@@ -1,0 +1,91 @@
+[
+  {
+    "description": "完全匹配 - おはよう",
+    "recognized": "おはよう",
+    "target": "おはよう",
+    "expected": {
+      "passed": true,
+      "similarity": 1.0,
+      "hasErrors": false
+    }
+  },
+  {
+    "description": "長音不足 - こうちゃ → こちゃ",
+    "recognized": "こちゃ",
+    "target": "こうちゃ",
+    "expected": {
+      "passed": false,
+      "similarityMin": 0.7,
+      "similarityMax": 0.9,
+      "hasErrors": true,
+      "errorContains": "長音"
+    }
+  },
+  {
+    "description": "促音缺失 - かった → かと",
+    "recognized": "かと",
+    "target": "かった",
+    "expected": {
+      "passed": false,
+      "similarityMin": 0.3,
+      "similarityMax": 0.7,
+      "hasErrors": true,
+      "errorContains": "促音"
+    }
+  },
+  {
+    "description": "濁音錯誤 - がくせい → かくせい",
+    "recognized": "かくせい",
+    "target": "がくせい",
+    "expected": {
+      "passed": false,
+      "similarityMin": 0.6,
+      "similarityMax": 0.9,
+      "hasErrors": true,
+      "errorContains": "濁音"
+    }
+  },
+  {
+    "description": "半濁音錯誤 - はなす → ぱなす",
+    "recognized": "ぱなす",
+    "target": "はなす",
+    "expected": {
+      "passed": false,
+      "similarityMin": 0.5,
+      "similarityMax": 0.9,
+      "hasErrors": true,
+      "errorContains": "半濁音"
+    }
+  },
+  {
+    "description": "空白差異應忽略",
+    "recognized": "  おはよう  ",
+    "target": "おはよう",
+    "expected": {
+      "passed": true,
+      "similarity": 1.0,
+      "hasErrors": false
+    }
+  },
+  {
+    "description": "大小寫差異應忽略（羅馬拼音）",
+    "recognized": "OHAYOU",
+    "target": "ohayou",
+    "expected": {
+      "passed": true,
+      "similarity": 1.0,
+      "hasErrors": false
+    }
+  },
+  {
+    "description": "相似度計算 - 部分正確",
+    "recognized": "おはよ",
+    "target": "おはよう",
+    "expected": {
+      "passed": false,
+      "similarityMin": 0.7,
+      "similarityMax": 0.9,
+      "hasErrors": false
+    }
+  }
+]
