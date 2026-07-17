@@ -1,11 +1,11 @@
 # Tasks: 前端發音練習核心流程
 
 ## 1. 牌組與卡片 UI
-- [ ] T201 DeckManager 元件：顯示牌組清單、匯入牌組、選擇牌組進入練習（先用假資料開發）
-- [ ] T202 Card 元件：翻卡顯示正反面、播放音檔按鈕
+- [x] T201 DeckManager 元件：顯示牌組清單、匯入牌組、選擇牌組進入練習（先用假資料開發）
+- [x] T202 Card 元件：翻卡顯示正反面、播放音檔按鈕
 
 ## 2. 錄音與語音辨識
-- [ ] T203 useRecorder Hook：呼叫 MediaRecorder API 錄下使用者發音
+- [x] T203 useRecorder Hook：呼叫 MediaRecorder API 錄下使用者發音
 - [ ] T204 whisper.cpp WASM 整合：編譯/載入模型，於 Web Worker 執行推理（記錄模型檔 URL，供後續 Service Worker 快取使用）
 - [ ] T205 useWhisper Hook：包裝 Worker 通訊，回傳辨識文字
 
