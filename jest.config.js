@@ -5,6 +5,15 @@ module.exports = {
   setupFiles: ["fake-indexeddb/auto"],
   testPathIgnorePatterns: ["/dist/"],
   transform: {
-    "^.+\\.tsx?$": ["ts-jest", {}]
+    "^.+\\.tsx?$": ["ts-jest", {
+      tsconfig: {
+        moduleResolution: "node",
+        esModuleInterop: true,
+        allowSyntheticDefaultImports: true,
+        jsx: "react-jsx",
+        target: "ES2020",
+        module: "commonjs",
+      }
+    }]
   },
 };
