@@ -7,74 +7,49 @@ dist/
 build/
 target/
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.so
-*.egg-info/
-.eggs/
+# Package lock files
+package-lock.json
+yarn.lock
 
-# Virtual environments
-venv/
-.venv/
-env/
-ENV/
+# TypeScript cache
+*.tsbuildinfo
+.nyc_output/
 
-# Logs
-*.log
+# Test coverage
+coverage/
+.nyc_output/
+.jest/
 
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Environment variables
+# Environment
 .env
 .env.local
 .env.*
 
-# Coverage
-.coverage
-coverage/
-htmlcov/
+# Logs
+*.log
 
-# IDE
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
-*.tmp
 
-# Testing
-.mypy_cache/
-.pytest_cache/
-.nyc_output/
-coverage/
+# Cache directories
+.cache/
+.node_modules.babel.json
 
-# Distribution / packaging
-*.tar.gz
-*.whl
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# mypy
-.mypy_cache/
-
-# Gradle
-.gradle/
-build/
-
-# Temporary files
-*.tmp
-*~
-```
-
-Wait, looking at the file changes again - they are all TypeScript source files and a JSON test fixture. No build artifacts, dependencies, or temporary files are in the change list.
-
-```
-
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 ```
