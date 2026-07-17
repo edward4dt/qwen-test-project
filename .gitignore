@@ -1,55 +1,44 @@
 ```
-# Dependencies
-node_modules/
-
-# Build artifacts
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
 dist/
 build/
 target/
 
-# Package lock files
-package-lock.json
-yarn.lock
+# Dependencies
+.venv/
+venv/
+node_modules/
+.mypy_cache/
+.pytest_cache/
+.gradle/
 
-# TypeScript cache
-*.tsbuildinfo
-.nyc_output/
-
-# Test coverage
-coverage/
-.nyc_output/
-.jest/
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
 
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
 
-# Logs
-*.log
-
-# Temporary files
-*.tmp
-*.temp
-.DS_Store
-Thumbs.db
-
-# IDE files
+# Editors
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Cache directories
-.cache/
-.node_modules.babel.json
+# Coverage
+coverage/
+htmlcov/
+.coverage
 
-# OS generated files
+# System files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
 ```
