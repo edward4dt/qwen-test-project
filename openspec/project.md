@@ -3,6 +3,11 @@
 ## 專案簡介
 離線優先的韓語/英文/日文/印尼文發音練習 PWA，卡牌形式，支援 YouTube 自動生成牌組、本機端 whisper.cpp 語音辨識與規則引擎評估。**主要發布管道為 Google Play（透過 TWA 封裝），同時保留可直接用瀏覽器安裝的 PWA。**
 
+### 語言支援策略
+- **階段一（MVP）**：完整實作日文（斷詞、字典查詢、發音規則）
+- **階段三**：擴充韓語、英語、印尼文的 plugin 實作
+- 所有語言共用同一套 plugin 架構，依 `Deck.language` 動態載入對應規則
+
 ## 技術棧
 - 前端：Next.js (App Router) + TypeScript + Tailwind CSS
 - 狀態管理：React Context + useReducer
